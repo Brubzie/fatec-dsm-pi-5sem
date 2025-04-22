@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.themeData, // Defina o tema claro
       darkTheme: ThemeData.dark(), // Defina o tema escuro
       themeMode: themeNotifier.themeMode,
-      supportedLocales: const [Locale('pt', 'BR')], // Defina o idioma padrão
+      supportedLocales: const [
+        Locale('pt', 'BR'), // Idioma padrão
+        Locale('en', 'US'), // Outro idioma
+      ],
     );
   }
 }

@@ -21,12 +21,13 @@ class MyApp extends StatelessWidget {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Amparo Coletivo',
-      home: const MainNavigation(),
-      theme: AppTheme.themeData,
-      darkTheme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false, // Remova o banner de depuração
+      title: 'Amparo Coletivo', // Defina o título da aplicação
+      home: const MainNavigation(), // Defina a tela inicial
+      theme: AppTheme.themeData, // Defina o tema claro
+      darkTheme: ThemeData.dark(), // Defina o tema escuro
       themeMode: themeNotifier.themeMode,
+      supportedLocales: const [Locale('pt', 'BR')], // Defina o idioma padrão
     );
   }
 }

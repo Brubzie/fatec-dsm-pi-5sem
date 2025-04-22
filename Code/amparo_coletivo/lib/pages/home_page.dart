@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             ongCarousel("ONG’s para arrecadação de roupas:", [
               ongItem(
                 imagePath: 'assets/images/ong1.png',
-              ), // você pode colocar a imagem real aqui
+              ),
               ongItem(),
               ongItem(),
             ]),

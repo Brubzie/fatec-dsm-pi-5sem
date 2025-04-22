@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:amparo_coletivo/pages/main_navigation.dart';
 import 'config/theme_config.dart';
 import 'config/theme_notifier.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(
@@ -31,6 +32,22 @@ class MyApp extends StatelessWidget {
         Locale('pt', 'BR'), // Idioma padrão
         Locale('en', 'US'), // Outro idioma
       ],
+      localizationsDelegates: const [
+        // Defina os delegados de localização
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        // Defina a resolução de localização
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale!.languageCode &&
+              supportedLocale.countryCode == locale.countryCode) {
+            return supportedLocale;
+          }
+        }
+        return supportedLocales.first;
+      },
     );
   }
 }
